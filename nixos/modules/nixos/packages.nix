@@ -50,9 +50,14 @@
     obs-studio
     flameshot
     vlc
+    nitrogen
 
     # Ricing
     i3
+    polybar
+    rofi
+    picom
+    betterlockscreen
 
     # Tools
     gcc
@@ -67,6 +72,7 @@
     tree
     nettools
     xclip
+    lshw
   ];
 
   programs.steam = {
@@ -81,5 +87,12 @@
   ];
 
   programs.zsh.enable = true;
+  programs.java.enable = true;
+  programs.java.package = pkgs.jdk21_headless;
+  virtualisation.docker.enable = true;
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
 
 }

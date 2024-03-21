@@ -33,4 +33,6 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
+  services.picom.enable = true;
+
 }

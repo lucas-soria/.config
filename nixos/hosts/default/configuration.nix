@@ -9,6 +9,7 @@
     ../../modules/nixos/window-server.nix
     ../../modules/nixos/services-daemons.nix
     ../../modules/nixos/battery-life.nix
+    ../../modules/nixos/gpu.nix
     ../../modules/nixos/packages.nix
     ../../modules/nixos/fonts.nix
 

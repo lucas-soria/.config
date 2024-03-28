@@ -4,7 +4,15 @@
 {
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+    noto-fonts
+    noto-fonts-cjk-sans
+    roboto
+    ibm-plex
+    (
+      nerdfonts.override {
+        fonts = [ "FiraCode" "DroidSansMono" "IBMPlexMono" "Iosevka" "IosevkaTerm" ];
+      }
+    )
   ];
 
 }

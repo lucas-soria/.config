@@ -61,7 +61,6 @@
     picom
     betterlockscreen
     xss-lock
-    # lightdm
 
     # Tools
     gcc
@@ -78,8 +77,7 @@
     xclip
     lshw
     xorg.xorgserver
-    # dunst
-    # lxde.lxsession
+    dunst
   ];
 
   programs.steam = {

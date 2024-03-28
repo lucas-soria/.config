@@ -43,7 +43,10 @@ bgcolor=000000ff
 #
 
 i3lockcolor_bin="i3lock-color"      # Manually set command for i3lock-color
-suspend_command="systemctl suspend" # Manually change action e.g. hibernate/suspend-command
+read my_suspend_command <<< $(echo "sleep $lock_timeout && systemctl suspend")
+# echo $my_suspend_command
+suspend_command="eval $my_suspend_command" # Manually change action e.g. hibernate/suspend-command
+
 
 # i3lock-color - custom arguments
 # lockargs=() 						  # overwriting default "(-n)"

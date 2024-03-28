@@ -51,13 +51,17 @@
     flameshot
     vlc
     nitrogen
+    sigil
 
     # Ricing
     i3
+    wayland
     polybar
     rofi
     picom
     betterlockscreen
+    xss-lock
+    # lightdm
 
     # Tools
     gcc
@@ -73,6 +77,9 @@
     nettools
     xclip
     lshw
+    xorg.xorgserver
+    # dunst
+    # lxde.lxsession
   ];
 
   programs.steam = {
@@ -87,8 +94,10 @@
   ];
 
   programs.zsh.enable = true;
+
   programs.java.enable = true;
   programs.java.package = pkgs.jdk21_headless;
+
   virtualisation.docker.enable = true;
   virtualisation.docker.rootless = {
     enable = true;

@@ -3,7 +3,7 @@
 # default options
 display_on=0
 span_image=false
-lock_timeout=300
+lock_timeout=30
 fx_list=(dim blur dimblur pixel dimpixel color)
 dim_level=30
 blur_level=1
@@ -42,9 +42,9 @@ bgcolor=000000ff
 # expert options (change at own risk!)
 #
 
-# i3lockcolor_bin="i3lock-color"      # Manually set command for i3lock-color
-# suspend_command="systemctl suspend" # Manually change action e.g. hibernate/suspend-command
+i3lockcolor_bin="i3lock-color"      # Manually set command for i3lock-color
+suspend_command="systemctl suspend" # Manually change action e.g. hibernate/suspend-command
 
 # i3lock-color - custom arguments
 # lockargs=() 						  # overwriting default "(-n)"
-# lockargs+=(--ignore-empty-password) # appending new argument
+lockargs+=(--ignore-empty-password) # appending new argument

@@ -7,6 +7,7 @@
   services.system76-scheduler.settings.cfsProfiles.enable = true;
 
   # Enable TLP (better than gnomes internal power manager)
+  services.power-profiles-daemon.enable = false;
   services.tlp = {
     enable = true;
     settings = {

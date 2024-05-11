@@ -5,12 +5,9 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.desktopManager.lxqt.enable = false;
-  # services.xserver.desktopManager.wallpaper = {
-  #   mode = "scale";
-  #   combineScreens = false;
-  # };
+  # USING I3
   # Disable the LXQT Desktop Environment and enable i3.
+  # services.xserver.desktopManager.lxqt.enable = false;
   services.xserver.displayManager = {
     startx.enable = true;
     sddm = {
@@ -19,6 +16,23 @@
     defaultSession = "none+i3";
   };
   services.xserver.windowManager.i3.enable = true;
+  # ------
+
+  # USING GNOME (Doesn't work properly)
+  # services.xserver = {
+  #   desktopManager.gnome.enable = true;
+  #   displayManager.gdm.enable = true;
+  # };
+  # environment.gnome.excludePackages = (with pkgs; [
+  #   gnome-photos
+  #   gnome-tour
+  # ]) ++ (with pkgs.gnome; [
+  #   evince # document viewer
+  #   epiphany # web browser
+  #   gnome-characters
+  # ]);
+  # ------
+
 
   # Configure keymap in X11
   services.xserver = {

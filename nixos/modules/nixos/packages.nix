@@ -25,6 +25,7 @@
     jetbrains.idea-community
     jetbrains.goland
     vscode
+    insomnia
 
     # Deploying
     spotify
@@ -76,8 +77,9 @@
     nettools
     xclip
     lshw
+    chromium
     xorg.xorgserver
-    dunst
+    dunst  # Bus?
   ];
 
   programs.steam = {

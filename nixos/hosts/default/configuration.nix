@@ -78,10 +78,18 @@
     ];
   };
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix.optimise = {
+    automatic = true;
+    dates = [ "00:00" ];
+  };
+
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    auto-optimise-store = true;
+  };
 
   # TODO: Implement home-manager
   # home-manager = {

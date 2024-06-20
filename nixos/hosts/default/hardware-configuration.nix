@@ -12,6 +12,10 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelParams = ["nvidia_drm.modeset=1"];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/4eb9cb40-101e-48d3-89ed-5baab966c1bc";

@@ -6,7 +6,20 @@
   services.xserver = {
     enable = true;
     desktopManager.gnome.enable = true;
-    displayManager.gdm.enable = true;
+    displayManager.gdm = {
+      enable = true;
+      wayland = true;
+    };
+  };
+
+  services.gnome = {
+    core-os-services.enable = true;  # Whether to enable essential services for GNOME3
+    core-utilities.enable = true;  # Whether to enable GNOME core utilities
+    gnome-browser-connector.enable = true;  # Whether to enable native host connector for the GNOME Shell browser extension, a DBus service allowing to install GNOME Shell extensions from a web browser
+    glib-networking.enable = true;  # Whether to enable network extensions for GLib
+    gnome-settings-daemon.enable = true;  # Whether to enable GNOME Settings Daemon
+    sushi.enable = true;  # Whether to enable Sushi, a quick previewer for nautilus
+
   };
 
   services.libinput = {
@@ -15,7 +28,12 @@
       mouse.naturalScrolling = true;
   };
 
-  programs.dconf.enable = true;
+  programs = {
+    dconf.enable = true;
+    nm-applet.enable = true;
+    chromium.enable = true;
+  };
+
 
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos
@@ -40,6 +58,11 @@
 
   environment.variables = {
     GDK_DPI_SCALE = "1.2";
+    QT_QPA_PLATFORM = "wayland";
+  };
+
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
   };
 
  }

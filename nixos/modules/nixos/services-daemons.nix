@@ -35,4 +35,6 @@
 
   services.picom.enable = true;
 
+  services.dbus.packages = with pkgs; [ gnome2.GConf ];
+
 }

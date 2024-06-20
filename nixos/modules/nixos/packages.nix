@@ -22,7 +22,7 @@
 
     # Dev
     git
-    jetbrains.idea-community
+    jetbrains.idea-community-bin
     jetbrains.goland
     vscode
     insomnia

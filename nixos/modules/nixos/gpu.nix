@@ -8,6 +8,10 @@
     enable = true;
     driSupport = true;
     driSupport32Bit = true;
+    extraPackages = with pkgs; [
+      rocm-opencl-icd
+      rocm-opencl-runtime
+    ];
   };
 
   # Load nvidia driver for Xorg and Wayland
@@ -35,7 +39,7 @@
     # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
     # Only available from driver 515.43.04+
     # Currently alpha-quality/buggy, so false is currently the recommended setting.
-    open = false;
+    open = true;  # false;
 
     # Enable the Nvidia settings menu,
 	# accessible via `nvidia-settings`.
@@ -47,7 +51,7 @@
   };
 
   hardware.nvidia.prime = {
-    sync.enable = true; # May use more battery.
+    # sync.enable = true; # May use more battery.
     # reverseSync.enable = true; # Only powers up gpu when needed but is experimental
     # Enable if using an external GPU
     # allowExternalGpu = false;
@@ -55,15 +59,6 @@
     # Make sure to use the correct Bus ID values for your system!
     intelBusId = "PCI:0:2:1";
     nvidiaBusId = "PCI:1:0:0";
-  };
-
-  specialisation = {
-    on-the-go.configuration = {
-      system.nixos.tags = [ "on-the-go" ];
-      hardware.nvidia = {
-	prime.sync.enable = lib.mkForce false;
-      };
-    };
   };
 
 }

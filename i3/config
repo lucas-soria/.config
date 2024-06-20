@@ -29,7 +29,7 @@ exec --no-startup-id dex --autostart --environment i3
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -s -l dimblur
+exec_always --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -s -l dimblur
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -39,7 +39,7 @@ exec --no-startup-id nm-applet
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Connect HDMI screen on the right when it's connected
-exec --no-startup-id xrandr | grep 'HDMI-1-1 connected' && xrandr --output eDP-1-1 --auto --mode 1920x1080 --output HDMI-1-1 --auto --right-of eDP-1-1 --mode 1920x1080
+exec_always --no-startup-id xrandr | grep 'HDMI-1-1 connected' && xrandr --output eDP-1-1 --auto --mode 1920x1080 --output HDMI-1-1 --auto --right-of eDP-1-1 --mode 1920x1080
 
 # Set wallpaper
 exec --no-startup-id sleep 1 && nitrogen --restore
@@ -233,8 +233,8 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-bindsym $mod+Tab workspace next
-bindsym $mod+Shift+Tab workspace prev
+bindsym $mod+Mod1+Right workspace next
+bindsym $mod+Mod1+Left workspace prev
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -271,6 +271,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bindsym $mod+Control+l exec --no-startup-id "loginctl lock-session $XDG_SESSION_ID"
+
+bindsym $mod+Shift+s exec --no-startup-id "flameshot gui"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

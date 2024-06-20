@@ -63,6 +63,10 @@
     betterlockscreen
     xss-lock
 
+    # Desktop Environments with not that much ricing
+    gnome
+    declarativeHome
+
     # Tools
     gcc
     cl

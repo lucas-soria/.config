@@ -16,15 +16,6 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      nixosModules = {
-        declarativeHome = { ... }: {
-          config = {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-          };
-        };
-      };
-
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [ 

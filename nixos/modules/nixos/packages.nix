@@ -15,7 +15,7 @@
 
     # Languages
     python3
-    nodejs_21
+    nodejs_22  # Deprecadted nodejs_21
     jdk21_headless
     zig
     go
@@ -62,10 +62,6 @@
     picom
     betterlockscreen
     xss-lock
-
-    # Desktop Environments with not that much ricing
-    gnome
-    declarativeHome
 
     # Tools
     gcc
